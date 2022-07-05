@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class NotificationMessageTests extends BaseTest {
-    private int lineLengthExpected = 19;
+
 
     @BeforeMethod
     public void navigate() {
@@ -20,9 +20,10 @@ public class NotificationMessageTests extends BaseTest {
         clickHere.click();
         WebElement notificationMessage = (new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("flash"))));
-        String textActual = notificationMessage.getText();
-        int lineLengthActual = textActual.length();
-        Assert.assertEquals(lineLengthActual, lineLengthExpected, "Checking through string length");
+        String notificationText = notificationMessage.getText();
+        String actualResult = notificationText.substring(0, 17);
+        String expectedResult = "Action successful";
+        Assert.assertEquals(actualResult, expectedResult, "Checking for correctness Notification Messages");
 
 
     }

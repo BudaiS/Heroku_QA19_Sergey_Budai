@@ -14,7 +14,6 @@ public class InputsTests extends BaseTest {
     @Test
     public void inputsTest() {
         WebElement inputs = driver.findElement(By.tagName("input"));
-        inputs.click();
         inputs.sendKeys("asdfgh{];:");
         String actualResult = inputs.getAttribute("value");
         String expectedResult = "";

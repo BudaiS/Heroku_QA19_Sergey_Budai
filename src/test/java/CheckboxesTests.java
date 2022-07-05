@@ -14,15 +14,15 @@ public class CheckboxesTests extends BaseTest {
     public void checkboxesTests() {
         WebElement firstCheckbox = driver.findElement(By.cssSelector("[type=checkbox]:nth-child(1)"));
         WebElement secondCheckbox = driver.findElement(By.cssSelector("[type=checkbox]:nth-child(3)"));
-        Assert.assertFalse(Boolean.parseBoolean(firstCheckbox.getAttribute("checked")),
+        Assert.assertFalse(firstCheckbox.isSelected(),
                 "Checking if the first checkbox is unchecked");
         firstCheckbox.click();
-        Assert.assertTrue(Boolean.parseBoolean(firstCheckbox.getAttribute("checked")),
+        Assert.assertTrue(firstCheckbox.isSelected(),
                 "Marked the first checkbox, checked that it is checked");
-        Assert.assertTrue(Boolean.parseBoolean(secondCheckbox.getAttribute("checked")),
+        Assert.assertTrue(secondCheckbox.isSelected(),
                 "Checked that the second checkbox is checked");
         secondCheckbox.click();
-        Assert.assertFalse(Boolean.parseBoolean(secondCheckbox.getAttribute("checked")),
+        Assert.assertFalse(secondCheckbox.isSelected(),
                 "Made uncheck in the second checkbox, checked that it was unchecked");
 
 
