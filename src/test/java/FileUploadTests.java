@@ -16,7 +16,7 @@ public class FileUploadTests extends BaseTest {
 
     @Test
     public void fileUploadTests() {
-        File file = new File("D:\\Project\\Heroku_QA19_Sergey_Budai\\src\\test\\java\\Resources\\Test.jpg");
+        File file = new File("src\\test\\java\\Resources\\Test.jpg");
         driver.findElement(By.id("file-upload")).sendKeys(file.getAbsolutePath());
         driver.findElement(By.id("file-submit")).click();
         WebDriverWait wait = new WebDriverWait(driver, 20);
